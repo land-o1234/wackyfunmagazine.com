@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Wacky Fun Magazine</title>
+        <link rel="icon" type="image/x-con" href="./images/logo.svg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+
+        <div class="header">
+            <a href="index.html">
+                <img src="./images/logo.svg" alt="Wacky Fun logo" style="width:200px;height:200px;">
+            </a>
+            <h1>Contact Us</h1>
+        </div>
+
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="database/index.html">Magazine Database</a>
+        </div>
+
+        <div class="main">
+            <div class="formheading">
+                <h1>Pick a form to fill out!</h1>
+                <h2>Make sure you do the reCAPTCHA before closing the tab that opens!</h2>
+            </div>
+            <div class="accordion_menu">
+                <button class="accordion">Subscribe Form</button>
+                <div class="panel">
+                    <div class="container">
+                        <form action="https://formsubmit.co/4d22165721f5d934c144ae7411b9df9b" method="POST" target="_blank">
+                      
+                          <label for="fname">First Name</label>
+                          <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                      
+                          <label for="lname">Last Name</label>
+                          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                          <label for="email">Email Address</label>
+                          <input type="email" name="email" placeholder="Your email address" required>
+                      
+                          <input type="submit" value="Submit Form">
+                          <input type="hidden" name="_subject" value="New Subscriber!">
+                      
+                        </form>
+                      </div>
+                </div>
+
+                <button class="accordion">Article Submission Form</button>
+                <div class="panel">
+                    <div class="container">
+                        <form action="https://formsubmit.co/4d22165721f5d934c144ae7411b9df9b" method="POST" target="_blank" enctype="multipart/form-data">
+                      
+                          <label for="fname">First Name</label>
+                          <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                      
+                          <label for="lname">Last Name</label>
+                          <input type="text" id="lname" name="lastname" placeholder="Your last name.. (optional)">
+
+                          <label for="email">Email Address</label>
+                          <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+                          <label for="articletitle">Article Title</label>
+                          <input type="text" id="articletitle" name="articletitle" placeholder="Title of your article" required>
+
+                          <label for="fupload">Upload Article</label>
+                          <input type="file" id="fupload" name="articlefile" required></textarea>
+
+                          <p>Do you want to be credited in the magazine with your name?</p>
+                          <label for="radio1">
+                            <input type="radio" id="radio1" name="name_in_magazine" value="Yes">
+                            Yes, you can use my full name in my article
+                          </label>
+                          <br>
+                          <label for="radio2">
+                            <input type="radio" id="radio2" name="name_in_magazine" value="No">
+                            No, I will stay anonymous.
+                          </label>
+                          <br>
+                          <label for="radio3">
+                            <input type="radio" id="radio3" name="name_in_magazine" value="Pen Name">
+                            Use this pen name instead of my name:
+                          </label>
+                          <input type="text" id="penname" name="pen_name" placeholder="Your custom pen name..">
+
+                          <p>Do you want your article to be redesigned?</p>
+                          <label for="Yes">
+                            <input type="radio" id="Yes" name="redesign_page" value="Yes">
+                            Yes, you can redesign my article, keeping the text the same.
+                          </label>
+                          <br>
+                          <label for="No">
+                            <input type="radio" id="No" name="name_in_magazine" value="No">
+                            No, please keep my article designed how I have it designed.
+                          </label>
+                          <br>
+                          
+                          <div class="submit_button">
+                          <input type="submit" value="Submit Form">
+                          <input type="hidden" name="_subject" value="New Article Submission">
+                          </div>
+                      
+                        </form>
+                      </div>
+                </div>
+
+                <button class="accordion">Feedback Form</button>
+                <div class="panel">
+                    <div class="container">
+                        <form action="https://formsubmit.co/4d22165721f5d934c144ae7411b9df9b" method="POST" target="_blank">
+                      
+                          <label for="fname">First Name</label>
+                          <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                      
+                          <label for="lname">Last Name</label>
+                          <input type="text" id="lname" name="lastname" placeholder="Your last name.. (optional)">
+
+                          <label for="email">Email Address</label>
+                          <input type="email" name="email" placeholder="Your email address" required>
+
+                          <label for="subject">Subject</label>
+                          <textarea id="subject" name="subject" placeholder="Share a comment or question!" style="height:200px" required></textarea>
+                      
+                          <input type="submit" value="Submit Form">
+                          <input type="hidden" name="_subject" value="Feedback form response">
+                      
+                        </form>
+                      </div>
+                </div>
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        /* Toggle between adding and removing the "active" class,
+                        to highlight the button that controls the panel */
+                        this.classList.toggle("active");
+
+                        /* Toggle between hiding and showing the active panel */
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                        } else {
+                        panel.style.display = "block";
+                        }
+                    });
+                    }
+                </script>
+            </div>
+        </div>
+
+    </body>
+
+</html>
