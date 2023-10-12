@@ -352,6 +352,23 @@ input[type='radio'], label{
   flex-direction: column;
 }
 
+.homepage_gallery {
+  border: 1px solid #ccc;
+}
+
+.homepage_gallery:hover {
+  border: 1px solid #777;
+}
+
+.homepage_gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.homepage_gallery h1 {
+  text-align: center;
+}
+
 .homepage_responsive {
   padding: 0 6px;
   float: left;
