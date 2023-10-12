@@ -1,3 +1,3 @@
-I'm Working on a website for magazine. Planning to publish on github pages.
+I'm Working on a website for magazine. Published on Github Pages here: https://land-o1234.github.io/wackyfunmagazine
 
 
