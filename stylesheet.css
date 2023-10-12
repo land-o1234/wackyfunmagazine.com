@@ -138,6 +138,7 @@
 
 .gallery {
   border: 1px solid #ccc;
+  height: 1000px;
 }
 
 .gallery:hover {
