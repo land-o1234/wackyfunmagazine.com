@@ -1,1 +1,3 @@
-Working on a website for magazine. Planning to publish on github pages.
+I'm Working on a website for magazine. Planning to publish on github pages.
+
+
