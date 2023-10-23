@@ -387,3 +387,21 @@ input[type='radio'], label{
     width: 100%;
   }
 }
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+.banner .close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.banner .close:hover {
+  color: red;
+}

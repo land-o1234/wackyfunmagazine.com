@@ -7,7 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body>
+<body>  
+<div class="banner">
+  <span class="close">x</span>  
+  <p>Note: Our website may not work well on mobile yet. We are working on fixing this to maximize ease of use.</p>
+</div>
+  
+<script>
+  var close = document.getElementsByClassName("close")[0];
+  var banner = document.getElementsByClassName("banner")[0];
+  
+  close.onclick = function() {
+      banner.style.display = "none";
+  }
+</script>
 
 <div class="header">
   <a href="index.html">
