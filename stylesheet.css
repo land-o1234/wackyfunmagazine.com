@@ -128,7 +128,7 @@
   will-change: transform;
  }
 
- /* Styles the find sidebar on database page */
+ /* Styles the find sidebar on archives page */
  .find {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
@@ -392,7 +392,7 @@ input[type='radio'], label{
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #177e80;
   padding: 10px;
   text-align: center;
 }
@@ -403,5 +403,5 @@ input[type='radio'], label{
   font-weight: bold;
 }
 .banner .close:hover {
-  color: red;
+  color: gray;
 }
