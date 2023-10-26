@@ -251,14 +251,14 @@
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-  padding: 0px 18px;
+  padding: 0px 10px;
   background-color: white;
   display: none;
   overflow: hidden;
 }
 
 .accordion_menu {
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 
@@ -324,7 +324,7 @@ input[type='radio'], label{
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 10px;
 }
 
 .unsubscribe {
@@ -404,4 +404,8 @@ input[type='radio'], label{
 }
 .banner .close:hover {
   color: gray;
+}
+
+.google_form {
+  text-align: center;
 }

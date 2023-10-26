@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Wacky Fun Magazine</title>
+        <link rel="icon" type="image/x-con" href="./images/logo.svg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+
+        <div class="header">
+            <a href="index.html">
+                <img src="./images/logo.svg" alt="Wacky Fun logo" style="width:200px;height:200px;">
+            </a>
+            <h1>Contact Us</h1>
+        </div>
+
+        <div class="main">
+            <div class="unsubscribe_form_heading">
+                <h1>Unsubscribe to The Wacky Fun Magazine</h1>
+                <h2 style="font-family: Fraunces;">We will miss you!</h2>
+            </div>
+            <div class="unsubscribe_side">
+                <h1>Change your mind?</h1>
+                <p>Go back to the <a href="./index.html">homepage</a></p>
+            </div>
+            <div class="unsubscribe">
+                <form action="" method="POST">
+                        
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                        
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    
+                    <input type="submit" value="Unsubscribe">
+                    <input type="hidden" name="_subject" value="Unsubsriber">
+                    
+                </form>
+            </div> 
+        </div>
+
+    </body>
+
+</html>
