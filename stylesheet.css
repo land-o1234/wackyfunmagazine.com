@@ -128,7 +128,7 @@
   will-change: transform;
  }
 
- /* Styles the find sidebar on database page */
+ /* Styles the find sidebar on archives page */
  .find {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
