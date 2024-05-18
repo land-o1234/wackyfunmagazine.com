@@ -1,0 +1,412 @@
+@font-face {
+    font-family: Chewy;
+    src: url('fonts/Chewy-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: SairaCondensed;
+    src: url('fonts/SairaCondensed-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: Fraunces;
+    src: url('fonts/Fraunces_9pt-Regular.ttf');
+  }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the body */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  /* Header/logo Title */
+  .header {
+    padding: 10px;
+    text-align: center;
+    background: #177e80;
+    color: black;
+  }
+  
+  /* Increase the font size of the heading */
+  .header h1 {
+    font-size: 40px;
+  }
+  
+  /* Style the top navigation bar */
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Column container */
+  .row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+
+  .side p {
+    padding: 10px;
+  }
+  
+  /* Main column */
+  .main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .sidebarimg {
+    padding: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px;
+    text-align: center;
+    font-family: Fraunces;
+    background: #177e80;
+  }
+  
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+    .row {   
+      flex-direction: column;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  /* Styles all of the canva embeds */
+ .canva {
+  margin: auto;
+  width: 40%;
+  height: 0%;
+  padding-top: 40%;
+  padding-bottom: 0;
+  box-shadow: 8px 9px 0px 0px rgba(63,69,81,0.16);
+  margin-top: 1.6em;
+  margin-bottom: 0.9em;
+  overflow: hidden;
+  border-radius: 8px;
+  will-change: transform;
+ }
+
+ /* Styles the find sidebar on archives page */
+ .find {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.gallery {
+  border: 1px solid #ccc;
+  height: 1000px;
+}
+
+.gallery:hover {
+  border: 1px solid #777;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery h1 {
+  text-align: center;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.latest_edition {
+  text-align: center;
+}
+
+.magazine_title {
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Chewy;
+  color: #5ce1e6;
+}
+
+.article_title {
+  padding: 2px;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  font-family: SairaCondensed;
+}
+
+.article_desc {
+  text-align: center;
+  font-family: Fraunces;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 6px 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.download_button {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.formheading {
+  font-family: Chewy;
+  text-align: center;
+}
+
+.unsubscribe_form_heading {
+  font-family: Chewy;
+  text-align: center;
+  border-radius: 10px;
+  border: solid;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #c2c2c2;
+  color: #000000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: solid;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #c2c2c2;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0px 10px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.accordion_menu {
+  width: 95%;
+  margin: auto;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=email], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=file], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #5ce1e6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #34a8ac;
+}
+
+input[type='radio'], label{
+  display: block;
+  float: left;
+}
+
+.submit_button {
+  padding-top: 12px;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.unsubscribe {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  float: left;
+}
+
+.unsubscribe_side {
+  border-radius: 5px;
+  padding: 20px;
+  width: 50%;
+  float: right;
+  text-align: center;
+}
+
+.strawpoll-embed {
+  height: 644px; 
+  max-width: 640px; 
+  width: 100%; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.homepage_gallery {
+  border: 1px solid #ccc;
+}
+
+.homepage_gallery:hover {
+  border: 1px solid #777;
+}
+
+.homepage_gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.homepage_gallery h1 {
+  text-align: center;
+}
+
+.homepage_responsive {
+  padding: 0 6px;
+  float: left;
+  width: 49.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .homepage_responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .homepage_responsive {
+    width: 100%;
+  }
+}
+
+.google_form {
+  text-align: center;
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #177e80;
+  padding: 10px;
+  text-align: center;
+}
+.banner .close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.banner .close:hover {
+  color: red;
+}
