@@ -16,21 +16,7 @@
         </script>
     </head>
     <body>
-
-        <div class="banner">
-            <span class="close">x</span>  
-            <p>Note: Our website may not work well on mobile yet. We are working on fixing this to maximize ease of use.</p>
-        </div>
-        
-        <script>
-            var close = document.getElementsByClassName("close")[0];
-            var banner = document.getElementsByClassName("banner")[0];
-            
-            close.onclick = function() {
-                banner.style.display = "none";
-            }
-        </script>
-            {{ content }}
+        {{ content }}
         <footer>
             <p>&copy; 2023 Wacky Fun Magazine. All rights reserved.</p>
         </footer>
