@@ -25,6 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  Dive into laughter and adventure on our site!
 domain: wackyfunmagazine.com
 url: https://wackyfunmagazine.com
+baseurl: /
 
 # Build settings
 # theme: minima
