@@ -139,7 +139,7 @@
 
 .gallery {
   border: 1px solid #ccc;
-  height: 750px;
+  height: 875px;
 }
 
 .gallery:hover {
@@ -222,12 +222,21 @@
   align-items: center; /* Center vertically */
 }
 
+.download_button:hover {
+    opacity: 0.75;
+  }
+
 .viewonline_button {
   padding-top: 10px;
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
 }
+
+.viewonline_button:hover {
+    opacity: 0.75;
+  }
+  
 
 .formheading {
   font-family: Chewy;
