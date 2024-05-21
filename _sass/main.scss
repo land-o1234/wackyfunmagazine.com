@@ -139,7 +139,7 @@
 
 .gallery {
   border: 1px solid #ccc;
-  height: 800px;
+  height: 750px;
 }
 
 .gallery:hover {
@@ -216,14 +216,18 @@
 }
 
 .download_button {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .viewonline_button {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
+  padding-top: 10px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
 
 .formheading {
   font-family: Chewy;
