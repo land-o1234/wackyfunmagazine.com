@@ -237,6 +237,29 @@
     opacity: 0.75;
   }
   
+  .home_download_button {
+    padding: 10px 30px 10px 30px; /* top right bottom left */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    float: right;
+  }
+  
+  .home_download_button:hover {
+      opacity: 0.75;
+    }
+  
+  .home_viewonline_button {
+    padding: 10px 30px 10px 30px; /* top right bottom left */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    float: left;
+  }
+  
+  .home_viewonline_button:hover {
+      opacity: 0.75;
+    }
 
 .formheading {
   font-family: Chewy;
@@ -363,12 +386,12 @@ input[type='radio'], label{
 }
 
 .strawpoll-embed {
-  height: 644px; 
-  max-width: 640px; 
-  width: 100%; 
-  margin: 0 auto; 
-  display: flex; 
-  flex-direction: column;
+    height: 708px; 
+    max-width: 640px; 
+    width: 100%; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column;
 }
 
 .homepage_gallery {
@@ -380,8 +403,9 @@ input[type='radio'], label{
 }
 
 .homepage_gallery img {
-  width: 100%;
+  width: 90%;
   height: auto;
+  padding-bottom: 10px;
 }
 
 .homepage_gallery h1 {
