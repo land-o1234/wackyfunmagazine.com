@@ -434,21 +434,3 @@ input[type='radio'], label{
 .google_form {
   text-align: center;
 }
-
-.banner {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #177e80;
-  padding: 10px;
-  text-align: center;
-}
-.banner .close {
-  color: black;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.banner .close:hover {
-  color: red;
-}
