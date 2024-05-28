@@ -434,3 +434,38 @@ input[type='radio'], label{
 .google_form {
   text-align: center;
 }
+
+.post-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.post-content {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.post-title {
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Chewy', sans-serif;
+  color: #5ce1e6;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  text-align: center;
+  font-family: 'SairaCondensed', sans-serif;
+  color: #177e80;
+  margin-bottom: 20px;
+}
+
+.post-body {
+  font-family: 'Fraunces', serif;
+  color: #333;
+}
