@@ -439,6 +439,10 @@ input[type='radio'], label{
   display: flex;
   justify-content: center;
   margin: 20px;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .post-content {
