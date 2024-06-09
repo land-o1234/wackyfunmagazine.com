@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {% if jekyll.environment == "production" %}
         <!-- Google Tag Manager -->
         <script>
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -10,12 +11,14 @@
             })(window,document,'script','dataLayer','GTM-K6QSFG93');
         </script>
         <!-- End Google Tag Manager -->
+        {% endif %}
         <title>{{ page.title }}</title>
         <link rel="icon" href="./images/favicon.ico">
         <link rel="icon" type="image/x-con" href="./images/favicon.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/css/stylesheet.css">
+        {% if jekyll.environment == "production" %}
         <!-- MailerLite Universal -->
         <script>
             (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -25,6 +28,7 @@
             ml('account', '959501');
         </script>
         <!-- End MailerLite Universal -->
+        {% endif %}
     </head>
 
     <div class="header">
@@ -36,10 +40,12 @@
     </div>
 
     <body>
+        {% if jekyll.environment == "production" %}
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6QSFG93"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+        {% endif %}
         {{ content }}
         <footer>
             <p>&copy; 2023 Wacky Fun Magazine. All rights reserved.</p>
