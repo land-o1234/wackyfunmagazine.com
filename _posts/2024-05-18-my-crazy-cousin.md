@@ -1,4 +1,5 @@
 ---
+sitemap: false
 layout: post
 title:  "My Crazy Cousin"
 author: "Joshua Brown"
