@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  Discover all-ages fun in our wacky magazine! We are a free magazine for your whole family. 
  Dive into laughter and adventure on our site!
 domain: wackyfunmagazine.com
-url: https://wackyfunmagazine.com
+url: "https://wackyfunmagazine.com"
 baseurl: /
 
 # Build settings
