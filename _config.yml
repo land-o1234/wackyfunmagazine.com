@@ -31,7 +31,7 @@ baseurl: ""
 # theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-sitemaap
+  - jekyll-sitemap
 
 defaults:
   - scope:
