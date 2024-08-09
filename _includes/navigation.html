@@ -1,7 +1,21 @@
-<div class="navbar">
+<div class="navbar" id="topnav">
     <a href="/" {% if page.url == "/" %} style="border-bottom: 5px solid #ffed00;"{% endif %}>Home</a>
     <a href="/archives/" {% if page.url == "/archives/" %} style="border-bottom: 5px solid #ffed00;"{% endif %}>Magazine Archives</a>
     <a href="https://wackyfunshop.redbubble.com">Shop</a>
     <a href="/subscribe.html" {% if page.url == "/subscribe.html" %} style="border-bottom: 5px solid #ffed00;"{% endif %}>Subscribe</a>
     <a href="/submit.html" {% if page.url == "/submit.html" %} style="border-bottom: 5px solid #ffed00;"{% endif %}>Submit an Article</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("topnav");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar";
+      }
+    }
+  </script>
