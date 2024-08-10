@@ -1,0 +1,10 @@
+- name: Home
+  link: /
+- name: Magazine Archives
+  link: /archives/
+- name: Shop
+  link: https://wackyfunshop.redbubble.com
+- name: Subscribe
+  link: /subscribe.html
+- name: Submit an Article
+  link: /submit.html
