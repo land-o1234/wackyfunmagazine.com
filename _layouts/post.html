@@ -1,18 +1,10 @@
 ---
 layout: default
 ---
-
-<div class="navbar">
-    <a href="{{ site.baseurl }}/">Home</a>
-    <a href="{{ site.baseurl }}/about/">About</a>
-    <a href="{{ site.baseurl }}/contact/">Contact</a>
-    <a href="{{ site.baseurl }}/archive/">Archive</a>
-</div>
-
-<div class="post-container" style="background-image: url('{{ page.background }}');">
-    <div class="post-content">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <p class="post-meta">By {{ page.author }} | {{ page.date | date: "%B %d, %Y" }}</p>
+<div class="post-container">
+    <div class="post">
+        <div class="post-title">{{ page.title }}</div>
+        <div class="post-meta">By {{ page.author }} | {{ page.date | date: "%B %d, %Y" }} | {{ page.reading-time }} read</div>
         <div class="post-body">
             {{ content }}
         </div>

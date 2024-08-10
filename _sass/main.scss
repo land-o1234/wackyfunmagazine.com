@@ -464,7 +464,7 @@ input[type='radio'], label{
   border-radius: 8px;
 }
 
-.post-content {
+.post {
   max-width: 800px;
   width: 100%;
   background: white;
@@ -474,7 +474,7 @@ input[type='radio'], label{
 }
 
 .post-title {
-  font-size: 2em;
+  font-size: 35px;
   text-align: center;
   font-family: 'Chewy', sans-serif;
   color: #5ce1e6;
@@ -486,11 +486,28 @@ input[type='radio'], label{
   font-family: 'SairaCondensed', sans-serif;
   color: #177e80;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .post-body {
   font-family: 'Fraunces', serif;
   color: #333;
+}
+
+@media screen and (max-width: 767px) {
+  .post-container {
+      background: none !important; /* Force removal of background */
+      padding: 5px;
+      margin: 0;
+      border-radius: 0;
+  }
+  
+  .post-content {
+      background: none !important; /* Force removal of background color */
+      padding: 5px;
+      box-shadow: none;
+      border-radius: 0;
+  }
 }
 
 .center_img {
@@ -499,3 +516,38 @@ input[type='radio'], label{
   margin-right: auto;
   width: 150px;
 }
+
+.post-intro {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.post-content {
+  font-family: 'Times New Roman', serif;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 5px solid #ddd;
+}
+
+.post-quote {
+  font-family: 'Courier New', monospace;
+  font-style: italic;
+  background: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+.post-dialogue {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+  padding-left: 10px;
+}
+
