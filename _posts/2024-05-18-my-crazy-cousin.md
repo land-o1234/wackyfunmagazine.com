@@ -18,7 +18,7 @@ You see, my dear reader, my cousin is the most well-traveled person I know. He g
 This particular experience of his takes place in a country restaurant—he didn’t specify where it was—near a small town in a rural area of the southern U.S. He claims that he spotted this little joint as he was riding along on one of his famous ventures. It was afternoon, the setting sun was staring my cousin down as he puttered along in his old pickup, and when he saw that country kitchen, he pulled off the dirt road instantly. He climbed up the creaky stairs and into the half-rotten, dirty, poorly-lit “restaurant.”
 </div>
 
-<div class="post-quote">
+<div class="post-dialogue">
 "Hello, traveler," the man greeted, slapping a large fly off the counter.
 </div>
 
@@ -36,7 +36,7 @@ My cousin sat and watched as the “waiter” pulled a backpack blower from the 
 The man continued, however, unfazed, until he reached the only occupied table. He then pulled the trigger on the blower and it revved to life. All the crumbs, the three dirty napkins, a used toothpick—a few mold spores, no doubt, too—flew into my cousin’s face like a hurricane.
 </div>
 
-<div class="post-quote">
+<div class="post-dialogue">
 "Clean," the man declared, letting the blower slide off his shoulder.
 </div>
 
@@ -44,7 +44,7 @@ The man continued, however, unfazed, until he reached the only occupied table. H
 My cousin didn’t even speak because he was pulling the trash off his face and shirt. He just sputtered and looked, open-mouthed, at the man.
 </div>
 
-<div class="post-quote">
+<div class="post-dialogue">
 "Order?"
 </div>
 
@@ -62,7 +62,7 @@ The man smiled, revealing crooked teeth, and then headed off. Once the man broug
 The man frowned and then nodded in recognition. He pulled some hand sanitizer out of his other pocket and dripped a little amount onto each prong of the fork, the bowl of the spoon, and the blade of the knife.
 </div>
 
-<div class="post-quote">
+<div class="post-dialogue">
 "Sanitized," the man said with pride.
 </div>
 
@@ -72,7 +72,7 @@ My cousin simply nodded, his jaw hanging open. As you could’ve guessed, he nib
 He made it outside and to his car. Once he got inside, he cranked it and prepared to leave.
 </div>
 
-<div class="post-quote">
+<div class="post-dialogue">
 "Tonight’s special," the man called as my cousin drove past him, holding up a field mouse.
 </div>
 
