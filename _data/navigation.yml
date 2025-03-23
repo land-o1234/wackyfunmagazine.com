@@ -2,8 +2,10 @@
   link: /
 - name: Magazine Archives
   link: /archives/
-- name: Articles
+- name: Blog
   link: https://articles.wackyfunmagazine.com
+- name: Shop
+  link: https://wackyfunshop.printful.me/
 - name: Subscribe
   link: /subscribe.html
 - name: Submit an Article
