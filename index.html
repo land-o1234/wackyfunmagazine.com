@@ -41,6 +41,67 @@ description: The all-ages, fun-filled magazine!
         </div>
       </div>
 
+      <!-- Featured Content Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        
+        <!-- Quick Stats Card -->
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(23, 126, 128, 0.05), rgba(92, 225, 230, 0.05));">
+          <div class="card-header">
+            <h3 class="card-title">Magazine Stats</h3>
+            <div class="card-icon">📊</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--primary-teal);">25+</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Editions Published</div>
+            </div>
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-cyan);">1000+</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Happy Readers</div>
+            </div>
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--primary-teal);">100%</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Free Content</div>
+            </div>
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-cyan);">∞</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Fun & Creativity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What's Inside Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">What's Inside?</h3>
+            <div class="card-icon">🎉</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🎨</span>
+              <span>Creative Art & Comics</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">📚</span>
+              <span>Engaging Stories & Tales</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🧩</span>
+              <span>Puzzles & Brain Teasers</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🎮</span>
+              <span>Fun Activities & Games</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🌟</span>
+              <span>Reader Submissions</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
       <!-- Blog Feed Placeholder -->
       <div class="card blog-feed">
         <div class="card-header">
@@ -50,7 +111,7 @@ description: The all-ages, fun-filled magazine!
         
         <!-- Blog items will be populated via RSS feed -->
         <div class="blog-item">
-          <a href="#" class="blog-title">Behind the Scenes: Creating Wacky Fun Magazine</a>
+          <a href="#" class="blog-title">Behind the Scenes: Creating Wacky Fun Magazine <span class="new-indicator">NEW</span></a>
           <p class="blog-excerpt">Discover the creative process behind our magazine and meet the team that makes it all possible...</p>
           <span class="blog-date">3 days ago</span>
         </div>
@@ -97,6 +158,11 @@ description: The all-ages, fun-filled magazine!
         <div style="margin-top: 1.5rem;">
           <h4 style="color: var(--primary-teal); font-size: 1rem; margin-bottom: 0.5rem;">🎯 Fun Fact</h4>
           <p style="font-size: 0.9rem;">We mainly add new editions during the summer, but you will see new ones every so often during the rest of the year.</p>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, rgba(92, 225, 230, 0.1), rgba(23, 126, 128, 0.1)); border-radius: 8px;">
+          <h4 style="color: var(--primary-teal); font-size: 0.9rem; margin-bottom: 0.5rem;">🌟 Our Mission</h4>
+          <p style="font-size: 0.85rem; margin: 0;">Creating joy and inspiring creativity in readers of all ages through free, engaging content.</p>
         </div>
       </div>
 

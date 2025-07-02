@@ -52,9 +52,12 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
         {% endif %}
+        
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        
         {% include navigation.html %}
         
-        <main>
+        <main id="main-content">
             {{ content }}
         </main>
         
