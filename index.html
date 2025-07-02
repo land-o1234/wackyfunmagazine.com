@@ -22,7 +22,7 @@ description: The all-ages, fun-filled magazine!
     <div class="main-content">
       
       <!-- Latest Edition Card -->
-      <div class="card latest-edition-card">
+      <div class="card latest-edition-card" style="text-align: center;">
         <div class="card-header">
           <h2 class="card-title">Latest Edition</h2>
           <div class="card-icon">📖</div>
@@ -109,27 +109,30 @@ description: The all-ages, fun-filled magazine!
           <div class="card-icon">📝</div>
         </div>
         
-        <!-- Blog items will be populated via RSS feed -->
-        <div class="blog-item">
-          <a href="#" class="blog-title">Behind the Scenes: Creating Wacky Fun Magazine <span class="new-indicator">NEW</span></a>
-          <p class="blog-excerpt">Discover the creative process behind our magazine and meet the team that makes it all possible...</p>
-          <span class="blog-date">3 days ago</span>
-        </div>
-        
-        <div class="blog-item">
-          <a href="#" class="blog-title">Fun Activities for Summer Break</a>
-          <p class="blog-excerpt">Keep the kids entertained this summer with these creative and educational activities...</p>
-          <span class="blog-date">1 week ago</span>
-        </div>
-        
-        <div class="blog-item">
-          <a href="#" class="blog-title">Reader Spotlight: Amazing Art Submissions</a>
-          <p class="blog-excerpt">Check out the incredible artwork our readers have submitted for our upcoming edition...</p>
-          <span class="blog-date">2 weeks ago</span>
-        </div>
-        
-        <div style="text-align: center; margin-top: 1rem;">
-          <a href="https://blog.wackyfunmagazine.com" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">View All Posts</a>
+        <!-- Blog content container with ID for JavaScript targeting -->
+        <div id="blog-content">
+          <!-- Blog items will be populated via RSS feed -->
+          <div class="blog-item">
+            <a href="#" class="blog-title">Behind the Scenes: Creating Wacky Fun Magazine <span class="new-indicator">NEW</span></a>
+            <p class="blog-excerpt">Discover the creative process behind our magazine and meet the team that makes it all possible...</p>
+            <span class="blog-date">3 days ago</span>
+          </div>
+          
+          <div class="blog-item">
+            <a href="#" class="blog-title">Fun Activities for Summer Break</a>
+            <p class="blog-excerpt">Keep the kids entertained this summer with these creative and educational activities...</p>
+            <span class="blog-date">1 week ago</span>
+          </div>
+          
+          <div class="blog-item">
+            <a href="#" class="blog-title">Reader Spotlight: Amazing Art Submissions</a>
+            <p class="blog-excerpt">Check out the incredible artwork our readers have submitted for our upcoming edition...</p>
+            <span class="blog-date">2 weeks ago</span>
+          </div>
+          
+          <div style="text-align: center; margin-top: 1rem;">
+            <a href="https://blog.wackyfunmagazine.com" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">View All Posts</a>
+          </div>
         </div>
       </div>
 
@@ -173,35 +176,13 @@ description: The all-ages, fun-filled magazine!
           <a href="/subscribe.html" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.75rem;">📧 Subscribe</a>
           <a href="/submit.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.75rem;">✍️ Submit Article</a>
           <a href="/archives/" class="btn" style="background: #e2e8f0; color: var(--text-dark); font-size: 0.9rem; padding: 0.75rem;">📚 View Archives</a>
-        </div>
-      </div>
-
-      <!-- Newsletter Signup -->
-      <div class="sidebar-section">
-        <h3 class="sidebar-title">Stay Updated</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Get notified when new editions are released!</p>
-        
-        <!-- MailerLite Universal Form Integration -->
-        <div class="ml-embedded" data-form="JBM5OP" style="margin-bottom: 1rem;"></div>
-        
-        <div style="font-size: 0.85rem; color: var(--text-light); text-align: center;">
-          <p style="margin: 0;">✨ Join our amazing community!</p>
-        </div>
-      </div>
-
-      <!-- Support Section -->
-      <div class="sidebar-section">
-        <h3 class="sidebar-title">Support Our Work</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Help us continue creating amazing content for everyone!</p>
-        
-        <!-- Ko-fi Button -->
-        <div style="text-align: center;">
-          <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-          <script type='text/javascript'>kofiwidget2.init('Support us on Ko-fi', '#5ce1e6', 'wackyfunmagazine');kofiwidget2.draw();</script>
-        </div>
-        
-        <div style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-top: 0.75rem;">
-          <p style="margin: 0;">☕ Every little bit helps!</p>
+          
+          <!-- Ko-fi Quick Action -->
+          <div style="margin-top: 0.5rem; padding: 0.75rem; background: linear-gradient(135deg, rgba(92, 225, 230, 0.1), rgba(23, 126, 128, 0.1)); border-radius: 8px; text-align: center;">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+            <script type='text/javascript'>kofiwidget2.init('Support us on Ko-fi', '#5ce1e6', 'wackyfunmagazine');kofiwidget2.draw();</script>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">☕ Help us create more content!</div>
+          </div>
         </div>
       </div>
 

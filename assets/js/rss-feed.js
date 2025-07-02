@@ -36,17 +36,15 @@ class RSSFeedLoader {
         return;
       }
 
-      const blogContainer = document.querySelector('.blog-feed .blog-item:first-child').parentNode;
+      const blogContainer = document.getElementById('blog-content');
       
-      // Clear existing blog items but keep the header
-      const existingItems = blogContainer.querySelectorAll('.blog-item');
-      existingItems.forEach(item => item.remove());
-      
-      // Remove the "View All Posts" button temporarily
-      const viewAllBtn = blogContainer.querySelector('.btn');
-      if (viewAllBtn) {
-        viewAllBtn.parentNode.remove();
+      if (!blogContainer) {
+        console.warn('Blog content container not found');
+        return;
       }
+      
+      // Clear existing content
+      blogContainer.innerHTML = '';
 
       // Process and display the RSS items
       Array.from(items).slice(0, this.maxPosts).forEach((item, index) => {
@@ -59,7 +57,7 @@ class RSSFeedLoader {
         blogContainer.appendChild(blogItemElement);
       });
 
-      // Re-add the "View All Posts" button
+      // Add the "View All Posts" button
       const viewAllContainer = document.createElement('div');
       viewAllContainer.style.cssText = 'text-align: center; margin-top: 1rem;';
       viewAllContainer.innerHTML = '<a href="https://blog.wackyfunmagazine.com" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">View All Posts</a>';
@@ -127,6 +125,23 @@ class RSSFeedLoader {
   showFallbackContent() {
     // Keep the existing placeholder content if RSS fails to load
     console.info('Using fallback blog content - RSS feed unavailable');
+    
+    // Optionally add a subtle indicator that this is fallback content
+    const blogContainer = document.getElementById('blog-content');
+    if (blogContainer) {
+      // Add a small note about RSS being unavailable, but make it subtle
+      const fallbackNote = document.createElement('div');
+      fallbackNote.style.cssText = 'font-size: 0.75rem; color: var(--text-light); text-align: center; margin-top: 1rem; opacity: 0.7;';
+      fallbackNote.innerHTML = '📡 Live blog updates temporarily unavailable';
+      
+      // Insert before the "View All Posts" button if it exists
+      const viewAllBtn = blogContainer.querySelector('.btn');
+      if (viewAllBtn && viewAllBtn.parentNode) {
+        viewAllBtn.parentNode.insertBefore(fallbackNote, viewAllBtn.parentNode);
+      } else {
+        blogContainer.appendChild(fallbackNote);
+      }
+    }
   }
 }
 
