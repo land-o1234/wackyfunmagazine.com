@@ -29,9 +29,21 @@ class RSSFeedLoader {
     try {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-      const items = xmlDoc.querySelectorAll('item');
+      
+      // Check for parsing errors
+      const parseError = xmlDoc.querySelector('parsererror');
+      if (parseError) {
+        throw new Error('XML parsing error');
+      }
+      
+      // Try both RSS (item) and Atom (entry) formats
+      let items = xmlDoc.querySelectorAll('item');
+      if (items.length === 0) {
+        items = xmlDoc.querySelectorAll('entry'); // Atom feed format
+      }
       
       if (items.length === 0) {
+        console.warn('No RSS/Atom items found');
         this.showFallbackContent();
         return;
       }
@@ -46,12 +58,31 @@ class RSSFeedLoader {
       // Clear existing content
       blogContainer.innerHTML = '';
 
-      // Process and display the RSS items
+      // Process and display the feed items
       Array.from(items).slice(0, this.maxPosts).forEach((item, index) => {
         const title = this.getTextContent(item, 'title');
-        const link = this.getTextContent(item, 'link');
-        const description = this.getTextContent(item, 'description');
-        const pubDate = this.getTextContent(item, 'pubDate');
+        
+        // For Atom feeds, links are in a different format
+        let link = this.getTextContent(item, 'link');
+        if (!link) {
+          const linkElement = item.querySelector('link[rel="alternate"]');
+          link = linkElement ? linkElement.getAttribute('href') : '';
+        }
+        
+        // Try different description fields (Atom uses summary, RSS uses description)
+        let description = this.getTextContent(item, 'description') || 
+                         this.getTextContent(item, 'summary') ||
+                         this.getTextContent(item, 'content');
+        
+        // Clean up CDATA and HTML tags from description
+        description = description.replace(/<!\[CDATA\[(.*?)\]\]>/gs, '$1')
+                                .replace(/<[^>]*>/g, '')
+                                .trim();
+        
+        // Try different date fields
+        const pubDate = this.getTextContent(item, 'pubDate') || 
+                       this.getTextContent(item, 'published') ||
+                       this.getTextContent(item, 'updated');
         
         const blogItemElement = this.createBlogItem(title, link, description, pubDate, index === 0);
         blogContainer.appendChild(blogItemElement);
@@ -62,6 +93,8 @@ class RSSFeedLoader {
       viewAllContainer.style.cssText = 'text-align: center; margin-top: 1rem;';
       viewAllContainer.innerHTML = '<a href="https://blog.wackyfunmagazine.com" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">View All Posts</a>';
       blogContainer.appendChild(viewAllContainer);
+
+      console.log('✅ RSS feed loaded successfully with', items.length, 'posts');
 
     } catch (error) {
       console.warn('Error parsing RSS feed:', error);
