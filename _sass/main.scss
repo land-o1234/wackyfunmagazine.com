@@ -21,6 +21,12 @@
   body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
   /* Header/logo Title */
@@ -40,6 +46,8 @@
   .navbar {
     overflow: hidden;
     background-color: #333;
+    border-radius: 0 0 12px 12px;
+    transition: all 0.3s ease;
   }
   
   /* Style the navigation bar links */
@@ -51,12 +59,15 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    transition: all 0.3s ease;
   }
 
   /* Change color on hover */
   .navbar a:hover {
     background-color: #ddd;
     color: black;
+    border-radius: 8px;
+    transform: translateY(-2px);
   }
 
   @media screen and (max-width: 600px) {
@@ -100,6 +111,9 @@
     flex: 30%;
     background-color: #f1f1f1;
     padding: 20px;
+    border-radius: 12px;
+    margin: 10px;
+    transition: all 0.3s ease;
   }
 
   .side p {
@@ -112,6 +126,9 @@
     flex: 70%;
     background-color: white;
     padding: 20px;
+    border-radius: 12px;
+    margin: 10px;
+    transition: all 0.3s ease;
   }
 
   .sidebarimg {
@@ -154,15 +171,23 @@
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
+  border-radius: 12px;
+  margin: 10px;
+  transition: all 0.3s ease;
 }
 
 .gallery {
   border: 1px solid #ccc;
   height: 875px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .gallery:hover {
   border: 1px solid #777;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .gallery img {
@@ -239,10 +264,13 @@
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  transition: all 0.3s ease;
 }
 
 .download_button:hover {
     opacity: 0.75;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
   }
 
 .viewonline_button {
@@ -250,10 +278,13 @@
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  transition: all 0.3s ease;
 }
 
 .viewonline_button:hover {
     opacity: 0.75;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
   }
   
   .home_download_button {
@@ -262,10 +293,13 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     float: right;
+    transition: all 0.3s ease;
   }
   
   .home_download_button:hover {
       opacity: 0.75;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
     }
   
   .home_viewonline_button {
@@ -274,10 +308,13 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     float: left;
+    transition: all 0.3s ease;
   }
   
   .home_viewonline_button:hover {
       opacity: 0.75;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
     }
 
 .formheading {
@@ -301,6 +338,8 @@
   width: 100%;
   text-align: left;
   border: solid;
+  border-radius: 8px;
+  margin-bottom: 5px;
   outline: none;
   transition: 0.4s;
 }
@@ -316,6 +355,8 @@
   background-color: white;
   display: none;
   overflow: hidden;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 10px;
 }
 
 .accordion_menu {
@@ -328,33 +369,43 @@ input[type=text], select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
+  border-radius: 8px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  transition: all 0.3s ease;
 }
 
 input[type=email], select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
+  border-radius: 8px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  transition: all 0.3s ease;
 }
 
 input[type=file], select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
+  border-radius: 8px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  transition: all 0.3s ease;
+}
+
+/* Add focus states for form inputs */
+input[type=text]:focus, input[type=email]:focus, input[type=file]:focus, select:focus, textarea:focus {
+  border-color: #5ce1e6;
+  box-shadow: 0 0 0 3px rgba(92, 225, 230, 0.1);
+  outline: none;
 }
 
 /* Style the submit button with a specific background color etc */
@@ -363,13 +414,16 @@ input[type=submit] {
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #34a8ac;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 168, 172, 0.3);
 }
 
 input[type='radio'], label{
@@ -383,25 +437,28 @@ input[type='radio'], label{
 
 /* Add a background color and some padding around the form */
 .container {
-  border-radius: 5px;
+  border-radius: 12px;
   background-color: #f2f2f2;
   padding: 10px;
+  transition: all 0.3s ease;
 }
 
 .unsubscribe {
-  border-radius: 5px;
+  border-radius: 12px;
   background-color: #f2f2f2;
   padding: 20px;
   width: 50%;
   float: left;
+  transition: all 0.3s ease;
 }
 
 .unsubscribe_side {
-  border-radius: 5px;
+  border-radius: 12px;
   padding: 20px;
   width: 50%;
   float: right;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .strawpoll-embed {
@@ -415,10 +472,16 @@ input[type='radio'], label{
 
 .homepage_gallery {
   border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 15px;
 }
 
 .homepage_gallery:hover {
   border: 1px solid #777;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
 .homepage_gallery img {
