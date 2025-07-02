@@ -39,11 +39,8 @@
 
     <div class="header">
         <a href="{{site.baseurl}}">
-          <img src="/assets/images/new-logo-full.svg" alt="Wacky Fun logo" style="width:100%; max-width:400px; height:auto;">
+          <img src="/assets/images/new-logo-full.svg" alt="Wacky Fun logo">
         </a>
-        <h1></h1>
-        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-        <script type='text/javascript'>kofiwidget2.init('Support us on Ko-fi', '#5ce1e6', 'wackyfunmagazine');kofiwidget2.draw();</script> 
     </div>
 
     <body>
@@ -53,10 +50,22 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
         {% endif %}
+        
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        
         {% include navigation.html %}
-        {{ content }}
+        
+        <main id="main-content">
+            {{ content }}
+        </main>
+        
         <footer>
-            <p>&copy; 2024 Wacky Fun Magazine. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2024 Wacky Fun Magazine. All rights reserved.</p>
+            </div>
         </footer>
+        
+        <!-- RSS Feed Integration Script -->
+        <script src="/assets/js/rss-feed.js"></script>
     </body>
 </html>

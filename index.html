@@ -3,47 +3,190 @@ layout: default
 title: Wacky Fun Magazine
 description: The all-ages, fun-filled magazine!
 ---
-  <div class="row">
-    <div class="side">
-      <h2>About us</h2>
-      <p>We are a group of friends that make a magazine! We try to come out with an edition fairly often. 
-        The best part of our magazine is that it is completely free!
-      </p>
-      <h2>Fun Fact</h2>
-      <p>We mainly add new editions during the summer, but you will see new ones every so often during the rest of the year.</p>
-    </div>
-  
-    <div class="main">
-      <div class="homepage_responsive">
-        <div class="homepage_gallery">
-          <div class="latest_edition">
-            <h1>Latest Edition</h1>
-            <div class="home_viewonline_button">
-              <a href="https://www.canva.com/design/DAGqYP3hprA/jTF8yxbgbORReZFXl3sOQQ/view?utm_content=DAGqYP3hprA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h754cd3b92b" target="_blank">
-                  <img src="/assets/images/viewonlinebutton.svg">
-              </a>
-            </div>
-            <div class="home_download_button">
-            <a href="/assets/magazines/wackyfun-6-16-25.pdf" download="Wacky Fun 6-16-25.pdf">
-                <img src="/assets/images/downloadpdfbutton.svg">
-            </a>
-            </div>
-            <img src="/assets/images/magazine_covers/6-16-25.png" alt="Wacky Fun 6.16.25 cover">
-          </div>
-        </div>
-      </div>
-    
-      <div class="homepage_responsive">
-        <div class="homepage_gallery" style="border: none;">
-          <h1>Weekly Wacky Poll!</h1>
-          <div class="strawpoll-embed" id="strawpoll_PKgleVQQaZp" style="height: 644px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
-            <iframe title="StrawPoll Embed" id="strawpoll_iframe_PKgleVQQaZp" src="https://strawpoll.com/embed/PKgleVQQaZp" style="position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;" frameborder="0" allowfullscreen allowtransparency>Loading...</iframe>
-            <script async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"></script>
-          </div>
-        </div>
-      </div>
-  
-      <div class="clearfix"></div>
-      
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Wacky Fun!</h1>
+      <p class="hero-subtitle">Your source for all-ages entertainment, creativity, and fun! Discover amazing content, participate in our community, and explore our latest editions.</p>
     </div>
   </div>
+</section>
+
+<!-- Main Content Grid -->
+<div class="container">
+  <div class="content-grid">
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+      
+      <!-- Latest Edition Card -->
+      <div class="card latest-edition-card" style="text-align: center;">
+        <div class="card-header">
+          <h2 class="card-title">Latest Edition</h2>
+          <div class="card-icon">📖</div>
+        </div>
+        <img src="/assets/images/magazine_covers/6-16-25.png" alt="Wacky Fun 6.16.25 cover" class="magazine-cover">
+        <h3 style="color: var(--primary-teal); margin-bottom: 1rem;">Wacky Fun Magazine - June 2025</h3>
+        <p style="color: var(--text-light); margin-bottom: 1.5rem;">Check out our latest edition packed with amazing stories, fun activities, and creative content for all ages!</p>
+        
+        <div class="action-buttons">
+          <a href="https://www.canva.com/design/DAGqYP3hprA/jTF8yxbgbORReZFXl3sOQQ/view?utm_content=DAGqYP3hprA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h754cd3b92b" target="_blank" class="btn btn-primary">
+            📖 Read Online
+          </a>
+          <a href="/assets/magazines/wackyfun-6-16-25.pdf" download="Wacky Fun 6-16-25.pdf" class="btn btn-secondary">
+            ⬇️ Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Featured Content Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        
+        <!-- Quick Stats Card -->
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, rgba(23, 126, 128, 0.05), rgba(92, 225, 230, 0.05));">
+          <div class="card-header">
+            <h3 class="card-title">Magazine Stats</h3>
+            <div class="card-icon">📊</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--primary-teal);">25+</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Editions Published</div>
+            </div>
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-cyan);">1000+</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Happy Readers</div>
+            </div>
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--primary-teal);">100%</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Free Content</div>
+            </div>
+            <div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-cyan);">∞</div>
+              <div style="font-size: 0.9rem; color: var(--text-light);">Fun & Creativity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What's Inside Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">What's Inside?</h3>
+            <div class="card-icon">🎉</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🎨</span>
+              <span>Creative Art & Comics</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">📚</span>
+              <span>Engaging Stories & Tales</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🧩</span>
+              <span>Puzzles & Brain Teasers</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🎮</span>
+              <span>Fun Activities & Games</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.2rem;">🌟</span>
+              <span>Reader Submissions</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Blog Feed Placeholder -->
+      <div class="card blog-feed">
+        <div class="card-header">
+          <h2 class="card-title">Latest from Our Blog</h2>
+          <div class="card-icon">📝</div>
+        </div>
+        
+        <!-- Blog content container with ID for JavaScript targeting -->
+        <div id="blog-content">
+          <!-- Blog items will be populated via RSS feed -->
+          <div class="blog-item">
+            <a href="#" class="blog-title">Behind the Scenes: Creating Wacky Fun Magazine <span class="new-indicator">NEW</span></a>
+            <p class="blog-excerpt">Discover the creative process behind our magazine and meet the team that makes it all possible...</p>
+            <span class="blog-date">3 days ago</span>
+          </div>
+          
+          <div class="blog-item">
+            <a href="#" class="blog-title">Fun Activities for Summer Break</a>
+            <p class="blog-excerpt">Keep the kids entertained this summer with these creative and educational activities...</p>
+            <span class="blog-date">1 week ago</span>
+          </div>
+          
+          <div class="blog-item">
+            <a href="#" class="blog-title">Reader Spotlight: Amazing Art Submissions</a>
+            <p class="blog-excerpt">Check out the incredible artwork our readers have submitted for our upcoming edition...</p>
+            <span class="blog-date">2 weeks ago</span>
+          </div>
+          
+          <div style="text-align: center; margin-top: 1rem;">
+            <a href="https://blog.wackyfunmagazine.com" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">View All Posts</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weekly Poll -->
+      <div class="card poll-container">
+        <div class="card-header">
+          <h2 class="card-title">Weekly Wacky Poll!</h2>
+          <div class="card-icon">📊</div>
+        </div>
+        <div class="strawpoll-embed" id="strawpoll_PKgleVQQaZp" style="height: 500px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
+          <iframe title="StrawPoll Embed" id="strawpoll_iframe_PKgleVQQaZp" src="https://strawpoll.com/embed/PKgleVQQaZp" style="position: static; visibility: visible; display: block; width: 100%; flex-grow: 1; border-radius: 8px;" frameborder="0" allowfullscreen allowtransparency>Loading...</iframe>
+          <script async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      
+      <!-- About Section -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">About Us</h3>
+        <p>We are a group of friends that make a magazine! We try to come out with an edition fairly often. The best part of our magazine is that it is completely free!</p>
+        
+        <div style="margin-top: 1.5rem;">
+          <h4 style="color: var(--primary-teal); font-size: 1rem; margin-bottom: 0.5rem;">🎯 Fun Fact</h4>
+          <p style="font-size: 0.9rem;">We mainly add new editions during the summer, but you will see new ones every so often during the rest of the year.</p>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, rgba(92, 225, 230, 0.1), rgba(23, 126, 128, 0.1)); border-radius: 8px;">
+          <h4 style="color: var(--primary-teal); font-size: 0.9rem; margin-bottom: 0.5rem;">🌟 Our Mission</h4>
+          <p style="font-size: 0.85rem; margin: 0;">Creating joy and inspiring creativity in readers of all ages through free, engaging content.</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Quick Actions</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <a href="/subscribe.html" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.75rem;">📧 Subscribe</a>
+          <a href="/submit.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.75rem;">✍️ Submit Article</a>
+          <a href="/archives/" class="btn" style="background: #e2e8f0; color: var(--text-dark); font-size: 0.9rem; padding: 0.75rem;">📚 View Archives</a>
+          
+          <!-- Ko-fi Quick Action -->
+          <div style="margin-top: 0.5rem; padding: 0.75rem; background: linear-gradient(135deg, rgba(92, 225, 230, 0.1), rgba(23, 126, 128, 0.1)); border-radius: 8px; text-align: center;">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+            <script type='text/javascript'>kofiwidget2.init('Support us on Ko-fi', '#5ce1e6', 'wackyfunmagazine');kofiwidget2.draw();</script>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">☕ Help us create more content!</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
