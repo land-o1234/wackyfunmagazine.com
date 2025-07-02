@@ -1,19 +1,21 @@
 <div class="navbar" id="topnav">
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}style="border-bottom: 5px solid #ffed00;"{% endif %}>{{ item.name }}</a>
-  {% endfor %}
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+  <div class="nav-container">
+    {% for item in site.data.navigation %}
+      <a href="{{ item.link }}" {% if page.url == item.link %}style="border-bottom: 3px solid #ffed00;"{% endif %}>{{ item.name }}</a>
+    {% endfor %}
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </div>
 
-  <script>
-    function myFunction() {
-      var x = document.getElementById("topnav");
-      if (x.className === "navbar") {
-        x.className += " navbar-expanded";
-      } else {
-        x.className = "navbar";
-      }
+<script>
+  function myFunction() {
+    var x = document.getElementById("topnav");
+    if (x.className === "navbar") {
+      x.className += " navbar-expanded";
+    } else {
+      x.className = "navbar";
     }
-  </script>
+  }
+</script>
