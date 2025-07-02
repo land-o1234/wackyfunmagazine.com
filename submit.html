@@ -2,12 +2,61 @@
 layout: default
 title: Submit Article
 ---
-        <div class="main">
-            <div class="formheading">
-                <h1>Submit an article for us to put into the magazine!</h1>
-            </div>
 
-            <div class="google_form">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXob-t2zQdTaQiF_x78CQIvdzaAm1kJb4zUqjaBFvzmJpHyQ/viewform?embedded=true" width="100%" height="1336" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            </div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Submit Your Article!</h1>
+      <p class="hero-subtitle">Share your creativity with our readers! We love featuring content from our amazing community.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="content-grid" style="grid-template-columns: 1fr;">
+    
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">✍️ Article Submission Form</h2>
+        <div class="card-icon">📝</div>
+      </div>
+      
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--primary-teal); margin-bottom: 1rem;">What we're looking for:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div style="padding: 1rem; background: rgba(92, 225, 230, 0.05); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); margin-bottom: 0.5rem;">🎨 Creative Content</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Art, comics, drawings, creative writing, and imaginative stories</p>
+          </div>
+          <div style="padding: 1rem; background: rgba(92, 225, 230, 0.05); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); margin-bottom: 0.5rem;">🧩 Fun Activities</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Puzzles, games, challenges, and interactive content</p>
+          </div>
+          <div style="padding: 1rem; background: rgba(92, 225, 230, 0.05); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); margin-bottom: 0.5rem;">📚 Educational</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Interesting facts, how-to guides, and learning content</p>
+          </div>
+          <div style="padding: 1rem; background: rgba(92, 225, 230, 0.05); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); margin-bottom: 0.5rem;">🎉 All Ages</h4>
+            <p style="font-size: 0.9rem; margin: 0;">Content that's fun and appropriate for readers of all ages</p>
+          </div>
         </div>
+      </div>
+
+      <!-- Google Form Embed -->
+      <div style="background: var(--bg-white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md);">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXob-t2zQdTaQiF_x78CQIvdzaAm1kJb4zUqjaBFvzmJpHyQ/viewform?embedded=true" width="100%" height="1336" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+      
+      <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Have questions? Feel free to reach out to us!</p>
+        <div>
+          <a href="/archives/" class="btn btn-secondary" style="margin-right: 1rem;">📚 View Past Issues</a>
+          <a href="/subscribe.html" class="btn" style="background: #e2e8f0; color: var(--text-dark);">📧 Subscribe</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
