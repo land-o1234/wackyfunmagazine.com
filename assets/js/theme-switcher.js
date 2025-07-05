@@ -12,14 +12,27 @@ class ThemeSwitcher {
 
   // Theme Management
   setupTheme() {
-    const savedTheme = this.getCookie('theme') || 'light';
+    const savedTheme = this.getCookie('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme !== 'light' ? savedTheme : (systemPrefersDark ? 'dark' : 'light');
+    
+    console.log('Theme setup - savedTheme:', savedTheme, 'systemPrefersDark:', systemPrefersDark);
+    
+    let initialTheme;
+    if (savedTheme) {
+      // Use saved theme preference
+      initialTheme = savedTheme;
+      console.log('Using saved theme:', initialTheme);
+    } else {
+      // No saved preference, use system preference
+      initialTheme = systemPrefersDark ? 'dark' : 'light';
+      console.log('Using system preference:', initialTheme);
+    }
     
     this.setTheme(initialTheme);
   }
 
   setTheme(theme) {
+    console.log('Setting theme to:', theme);
     document.documentElement.setAttribute('data-theme', theme);
     this.setCookie('theme', theme, 365);
     this.updateThemeIcon(theme);
@@ -45,8 +58,10 @@ class ThemeSwitcher {
     expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
     // Use localStorage as fallback for development environments
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      console.log('Setting cookie in localStorage:', name, '=', value);
       localStorage.setItem(name, value);
     } else {
+      console.log('Setting cookie in document.cookie:', name, '=', value);
       document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
     }
   }
@@ -54,7 +69,9 @@ class ThemeSwitcher {
   getCookie(name) {
     // Use localStorage as fallback for development environments
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      return localStorage.getItem(name);
+      const value = localStorage.getItem(name);
+      console.log('Getting cookie from localStorage:', name, '=', value);
+      return value;
     }
     
     const nameEQ = name + "=";
@@ -62,8 +79,13 @@ class ThemeSwitcher {
     for (let i = 0; i < ca.length; i++) {
       let c = ca[i];
       while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      if (c.indexOf(nameEQ) === 0) {
+        const value = c.substring(nameEQ.length, c.length);
+        console.log('Getting cookie from document.cookie:', name, '=', value);
+        return value;
+      }
     }
+    console.log('Cookie not found:', name);
     return null;
   }
 
