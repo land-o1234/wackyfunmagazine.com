@@ -41,6 +41,12 @@
         <a href="{{site.baseurl}}">
           <img src="/assets/images/new-logo-full.svg" alt="Wacky Fun logo">
         </a>
+        <!-- Theme Switcher -->
+        <div class="theme-switcher">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </div>
     </div>
 
     <body>
@@ -65,7 +71,23 @@
             </div>
         </footer>
         
+        <!-- Cookie Banner -->
+        <div id="cookie-banner" class="cookie-banner">
+          <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+              <strong>🍪 We use cookies to enhance your experience!</strong>
+              <p>We use cookies to save your theme preference and provide basic functionality. By continuing to use our site, you consent to our use of cookies.</p>
+            </div>
+            <div class="cookie-banner-actions">
+              <button id="cookie-accept" class="cookie-accept-btn">Accept</button>
+              <button id="cookie-decline" class="cookie-decline-btn">Decline</button>
+            </div>
+          </div>
+        </div>
+        
         <!-- RSS Feed Integration Script -->
         <script src="/assets/js/rss-feed.js"></script>
+        <!-- Theme Switcher Script -->
+        <script src="/assets/js/theme-switcher.js"></script>
     </body>
 </html>
