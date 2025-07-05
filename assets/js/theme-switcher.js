@@ -43,10 +43,20 @@ class ThemeSwitcher {
   setCookie(name, value, days) {
     const expires = new Date();
     expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+    // Use localStorage as fallback for development environments
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      localStorage.setItem(name, value);
+    } else {
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+    }
   }
 
   getCookie(name) {
+    // Use localStorage as fallback for development environments
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      return localStorage.getItem(name);
+    }
+    
     const nameEQ = name + "=";
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -60,6 +70,7 @@ class ThemeSwitcher {
   // Cookie Banner Management
   setupCookieBanner() {
     const cookieConsent = this.getCookie('cookie-consent');
+    console.log('Cookie consent status:', cookieConsent); // Debug log
     if (!cookieConsent) {
       this.showCookieBanner();
     }
@@ -68,9 +79,12 @@ class ThemeSwitcher {
   showCookieBanner() {
     const banner = document.getElementById('cookie-banner');
     if (banner) {
+      console.log('Showing cookie banner'); // Debug log
       setTimeout(() => {
         banner.classList.add('show');
-      }, 1000); // Show after 1 second
+      }, 500); // Reduced delay for development
+    } else {
+      console.log('Cookie banner element not found'); // Debug log
     }
   }
 
@@ -98,7 +112,11 @@ class ThemeSwitcher {
 
   clearNonEssentialCookies() {
     // Clear theme cookie if user declines
-    document.cookie = 'theme=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      localStorage.removeItem('theme');
+    } else {
+      document.cookie = 'theme=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    }
     // Reset theme to light mode
     this.setTheme('light');
   }
