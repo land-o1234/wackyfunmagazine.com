@@ -1,0 +1,192 @@
+---
+layout: default
+title: Wacky Fun Corner - Interactive Fun!
+description: Explore our collection of wacky widgets and interactive fun tools!
+---
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">🎉 Wacky Fun Corner</h1>
+      <p class="hero-subtitle">Discover amazing widgets, tools, and interactive fun! From wacky calendars to random facts, we've got entertainment for everyone!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="content-grid">
+    
+    <!-- Main Widget Area -->
+    <div class="main-content">
+      
+      <!-- Widget Grid -->
+      <div id="widget-container" class="widget-grid">
+        
+        <!-- Wacky Fact Widget -->
+        <div class="widget-card" data-widget-type="fact-randomizer">
+          <div class="widget-header">
+            <h3 class="widget-title">🎲 Wacky Fact Randomizer</h3>
+            <button class="widget-refresh" onclick="refreshWidget('fact-randomizer')">🔄</button>
+          </div>
+          <div class="widget-content">
+            <div id="fact-display" class="fact-display">
+              <p>Click the button below to discover a wacky fact!</p>
+            </div>
+            <button class="widget-action-btn" onclick="getRandomFact()">Get Random Fact!</button>
+          </div>
+        </div>
+
+        <!-- Wacky Calendar Widget -->
+        <div class="widget-card" data-widget-type="wacky-calendar">
+          <div class="widget-header">
+            <h3 class="widget-title">📅 Wacky Events Calendar</h3>
+            <button class="widget-refresh" onclick="refreshWidget('wacky-calendar')">🔄</button>
+          </div>
+          <div class="widget-content">
+            <div id="calendar-display" class="calendar-display">
+              <div class="current-date">
+                <span id="current-day"></span>
+                <span id="current-month"></span>
+              </div>
+              <div id="wacky-event" class="wacky-event">
+                <p>Loading today's wacky event...</p>
+              </div>
+            </div>
+            <button class="widget-action-btn" onclick="getNextWackyEvent()">Next Event</button>
+          </div>
+        </div>
+
+        <!-- Color Mood Widget -->
+        <div class="widget-card" data-widget-type="color-mood">
+          <div class="widget-header">
+            <h3 class="widget-title">🌈 Color Mood Generator</h3>
+            <button class="widget-refresh" onclick="refreshWidget('color-mood')">🔄</button>
+          </div>
+          <div class="widget-content">
+            <div id="color-display" class="color-display">
+              <div class="color-swatch" id="mood-color"></div>
+              <p id="mood-description">Click to discover your mood color!</p>
+            </div>
+            <button class="widget-action-btn" onclick="generateMoodColor()">Generate Mood Color!</button>
+          </div>
+        </div>
+
+        <!-- Word of the Day Widget -->
+        <div class="widget-card" data-widget-type="word-of-day">
+          <div class="widget-header">
+            <h3 class="widget-title">📝 Wacky Word of the Day</h3>
+            <button class="widget-refresh" onclick="refreshWidget('word-of-day')">🔄</button>
+          </div>
+          <div class="widget-content">
+            <div id="word-display" class="word-display">
+              <div class="word-title" id="daily-word">Loading...</div>
+              <div class="word-definition" id="word-definition">Discovering a wacky word for you!</div>
+            </div>
+            <button class="widget-action-btn" onclick="getRandomWord()">Get New Word!</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Widget Instructions -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">🔧 How to Add New Widgets</h2>
+          <div class="card-icon">⚙️</div>
+        </div>
+        <div class="card-content">
+          <p>Want to add your own wacky widget? It's easy! Follow these steps:</p>
+          
+          <div class="instruction-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <div class="step-content">
+                <h4>Create Widget HTML</h4>
+                <p>Add a new <code>.widget-card</code> div to the widget grid with a unique <code>data-widget-type</code>.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <span class="step-number">2</span>
+              <div class="step-content">
+                <h4>Add Widget Logic</h4>
+                <p>Create JavaScript functions in <code>wacky-widgets.js</code> to handle your widget's functionality.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <span class="step-number">3</span>
+              <div class="step-content">
+                <h4>Style Your Widget</h4>
+                <p>Add custom CSS classes to make your widget look amazing!</p>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(92, 225, 230, 0.1); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); margin-bottom: 0.5rem;">💡 Widget Ideas</h4>
+            <ul style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
+              <li>Daily joke generator</li>
+              <li>Random drawing prompt</li>
+              <li>Wacky story generator</li>
+              <li>Mood music picker</li>
+              <li>Fun photo filters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      
+      <!-- Widget Stats -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Widget Stats</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+          <div style="text-align: center; padding: 0.75rem; background: rgba(92, 225, 230, 0.1); border-radius: 8px;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary-teal);" id="widget-count">4</div>
+            <div style="font-size: 0.8rem; color: var(--text-light);">Active Widgets</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: rgba(92, 225, 230, 0.1); border-radius: 8px;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary-teal);" id="interaction-count">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-light);">Interactions</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Quick Actions</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <button class="btn btn-primary" onclick="refreshAllWidgets()" style="font-size: 0.9rem; padding: 0.75rem;">🔄 Refresh All Widgets</button>
+          <a href="/submit.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.75rem;">💡 Submit Widget Idea</a>
+          <a href="/archives/" class="btn" style="background: #e2e8f0; color: var(--text-dark); font-size: 0.9rem; padding: 0.75rem;">📚 View Archives</a>
+        </div>
+      </div>
+
+      <!-- Recent Updates -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Recent Updates</h3>
+        <div style="margin-top: 1rem;">
+          <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(92, 225, 230, 0.05); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); font-size: 0.9rem; margin-bottom: 0.5rem;">🎲 New Widget Added!</h4>
+            <p style="font-size: 0.85rem; margin: 0;">The Wacky Fact Randomizer is now live with over 100 amazing facts!</p>
+          </div>
+          <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(92, 225, 230, 0.05); border-radius: 8px;">
+            <h4 style="color: var(--primary-teal); font-size: 0.9rem; margin-bottom: 0.5rem;">🌈 Color Mood Generator</h4>
+            <p style="font-size: 0.85rem; margin: 0;">Discover your daily mood through colors and fun descriptions!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Widget Scripts -->
+<script src="/assets/js/wacky-widgets.js"></script>
