@@ -13,27 +13,22 @@ class ThemeSwitcher {
   // Theme Management
   setupTheme() {
     const savedTheme = this.getCookie('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    console.log('Theme setup - savedTheme:', savedTheme, 'systemPrefersDark:', systemPrefersDark);
-    
+    // Always default to light if no saved theme
     let initialTheme;
     if (savedTheme) {
-      // Use saved theme preference
       initialTheme = savedTheme;
       console.log('Using saved theme:', initialTheme);
     } else {
-      // No saved preference, use system preference
-      initialTheme = systemPrefersDark ? 'dark' : 'light';
-      console.log('Using system preference:', initialTheme);
+      initialTheme = 'light';
+      console.log('No saved theme, defaulting to light');
     }
-    
     this.setTheme(initialTheme);
   }
 
   setTheme(theme) {
     console.log('Setting theme to:', theme);
     document.documentElement.setAttribute('data-theme', theme);
+    // Always overwrite the cookie
     this.setCookie('theme', theme, 365);
     this.updateThemeIcon(theme);
   }
@@ -58,10 +53,9 @@ class ThemeSwitcher {
     expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
     // Use localStorage as fallback for development environments
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      console.log('Setting cookie in localStorage:', name, '=', value);
       localStorage.setItem(name, value);
     } else {
-      console.log('Setting cookie in document.cookie:', name, '=', value);
+      // Always overwrite the cookie by setting path and SameSite
       document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
     }
   }
