@@ -1,4 +1,4 @@
-// Theme Switcher and Cookie Management
+// Theme Switcher and Consent Management
 class ThemeSwitcher {
   constructor() {
     this.init();
@@ -12,23 +12,14 @@ class ThemeSwitcher {
 
   // Theme Management
   setupTheme() {
-    const savedTheme = this.getCookie('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    let initialTheme;
-    if (savedTheme) {
-      initialTheme = savedTheme;
-    } else {
-      // No saved preference, use system preference
-      initialTheme = systemPrefersDark ? 'dark' : 'light';
-    }
+    const savedTheme = this.getStorage('theme');
+    let initialTheme = savedTheme ? savedTheme : 'light'; // Always default to light
     this.setTheme(initialTheme);
   }
 
   setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    // Always overwrite the cookie
-    this.setCookie('theme', theme, 365);
+    this.setStorage('theme', theme);
     this.updateThemeIcon(theme);
   }
 
@@ -46,40 +37,18 @@ class ThemeSwitcher {
     }
   }
 
-  // Cookie Management
-  setCookie(name, value, days) {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-    // Use localStorage as fallback for development environments
-    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      localStorage.setItem(name, value);
-    } else {
-      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
-    }
+  // Storage Management (localStorage only)
+  setStorage(name, value) {
+    localStorage.setItem(name, value);
   }
 
-  getCookie(name) {
-    // Use localStorage as fallback for development environments
-    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      return localStorage.getItem(name);
-    }
-    
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) === 0) {
-        return c.substring(nameEQ.length, c.length);
-      }
-    }
-    return null;
+  getStorage(name) {
+    return localStorage.getItem(name);
   }
 
   // Cookie Banner Management
   setupCookieBanner() {
-    const cookieConsent = this.getCookie('cookie-consent');
-    console.log('Cookie consent status:', cookieConsent); // Debug log
+    const cookieConsent = this.getStorage('cookie-consent');
     if (!cookieConsent) {
       this.showCookieBanner();
     }
@@ -88,12 +57,9 @@ class ThemeSwitcher {
   showCookieBanner() {
     const banner = document.getElementById('cookie-banner');
     if (banner) {
-      console.log('Showing cookie banner'); // Debug log
       setTimeout(() => {
         banner.classList.add('show');
-      }, 500); // Reduced delay for development
-    } else {
-      console.log('Cookie banner element not found'); // Debug log
+      }, 500);
     }
   }
 
@@ -108,25 +74,18 @@ class ThemeSwitcher {
   }
 
   acceptCookies() {
-    this.setCookie('cookie-consent', 'accepted', 365);
+    this.setStorage('cookie-consent', 'accepted');
     this.hideCookieBanner();
   }
 
   declineCookies() {
-    this.setCookie('cookie-consent', 'declined', 365);
-    // Remove any non-essential cookies
-    this.clearNonEssentialCookies();
+    this.setStorage('cookie-consent', 'declined');
+    this.clearNonEssentialStorage();
     this.hideCookieBanner();
   }
 
-  clearNonEssentialCookies() {
-    // Clear theme cookie if user declines
-    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      localStorage.removeItem('theme');
-    } else {
-      document.cookie = 'theme=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    }
-    // Reset theme to light mode
+  clearNonEssentialStorage() {
+    localStorage.removeItem('theme');
     this.setTheme('light');
   }
 
@@ -141,18 +100,18 @@ class ThemeSwitcher {
     // Cookie banner buttons
     const acceptBtn = document.getElementById('cookie-accept');
     const declineBtn = document.getElementById('cookie-decline');
-    
+
     if (acceptBtn) {
       acceptBtn.addEventListener('click', () => this.acceptCookies());
     }
-    
+
     if (declineBtn) {
       declineBtn.addEventListener('click', () => this.declineCookies());
     }
 
-    // Listen for system theme changes
+    // Listen for system theme changes only if no theme is set
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!this.getCookie('theme')) {
+      if (!this.getStorage('theme')) {
         this.setTheme(e.matches ? 'dark' : 'light');
       }
     });
