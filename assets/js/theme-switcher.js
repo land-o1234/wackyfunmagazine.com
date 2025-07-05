@@ -13,20 +13,19 @@ class ThemeSwitcher {
   // Theme Management
   setupTheme() {
     const savedTheme = this.getCookie('theme');
-    // Always default to light if no saved theme
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
     let initialTheme;
     if (savedTheme) {
       initialTheme = savedTheme;
-      console.log('Using saved theme:', initialTheme);
     } else {
-      initialTheme = 'light';
-      console.log('No saved theme, defaulting to light');
+      // No saved preference, use system preference
+      initialTheme = systemPrefersDark ? 'dark' : 'light';
     }
     this.setTheme(initialTheme);
   }
 
   setTheme(theme) {
-    console.log('Setting theme to:', theme);
     document.documentElement.setAttribute('data-theme', theme);
     // Always overwrite the cookie
     this.setCookie('theme', theme, 365);
@@ -55,7 +54,6 @@ class ThemeSwitcher {
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
       localStorage.setItem(name, value);
     } else {
-      // Always overwrite the cookie by setting path and SameSite
       document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
     }
   }
@@ -63,9 +61,7 @@ class ThemeSwitcher {
   getCookie(name) {
     // Use localStorage as fallback for development environments
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      const value = localStorage.getItem(name);
-      console.log('Getting cookie from localStorage:', name, '=', value);
-      return value;
+      return localStorage.getItem(name);
     }
     
     const nameEQ = name + "=";
@@ -74,12 +70,9 @@ class ThemeSwitcher {
       let c = ca[i];
       while (c.charAt(0) === ' ') c = c.substring(1, c.length);
       if (c.indexOf(nameEQ) === 0) {
-        const value = c.substring(nameEQ.length, c.length);
-        console.log('Getting cookie from document.cookie:', name, '=', value);
-        return value;
+        return c.substring(nameEQ.length, c.length);
       }
     }
-    console.log('Cookie not found:', name);
     return null;
   }
 
