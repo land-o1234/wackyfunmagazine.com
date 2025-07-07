@@ -1,7 +1,5 @@
 - name: Home
   link: /
-- name: Wacky Fun Corner
-  link: /wacky-fun-corner.html
 - name: Magazine Archives
   link: /archives/
 - name: Blog

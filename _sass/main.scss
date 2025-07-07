@@ -219,9 +219,18 @@ p {
 /* Modern Grid Layout */
 .content-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 320px; // or whatever width you want for sidebar
   gap: 2rem;
-  margin: 2rem 0;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -415,7 +424,7 @@ p {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   padding: 1.5rem;
-  height: fit-content;
+  height: max-content; // changed from fit-content
   position: sticky;
   top: 6rem;
   border-left: 4px solid var(--accent-yellow);
@@ -498,7 +507,7 @@ p {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   padding: 1.5rem;
-  height: fit-content;
+  height: max-content; // changed from fit-content
   position: sticky;
   top: 6rem;
 }
