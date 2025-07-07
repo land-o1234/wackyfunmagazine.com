@@ -65,7 +65,6 @@ class WackyWidgets {
       "A group of owls is called a 'parliament'!",
       "The dot over a lowercase 'i' or 'j' is called a tittle!",
       "Rubber bands last longer when refrigerated!",
-      "The tongue is the strongest muscle in the human body!",
       "A sneeze travels at about 100 miles per hour!",
       "The average person walks the equivalent of 5 times around the world in their lifetime!",
       "Penguins can jump as high as 6 feet in the air!"
