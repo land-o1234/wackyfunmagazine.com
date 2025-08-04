@@ -3,7 +3,7 @@
 
 class RSSFeedLoader {
   constructor() {
-    this.feedUrl = 'https://blog.wackyfunmagazine.com/feed.xml';
+    this.feedUrl = 'https://blog.wackyfunmagazine.com/feed';
     this.corsProxy = 'https://api.allorigins.win/get?url=';
     this.maxPosts = 3;
   }
