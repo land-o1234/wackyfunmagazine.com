@@ -1,24 +1,19 @@
 // RSS Feed Integration for Wacky Fun Magazine
-// Fetches blog posts from blog.wackyfunmagazine.com/feed.xml and displays them
+// Fetches blog posts from blog.wackyfunmagazine.com/feed/ and displays them
 
 class RSSFeedLoader {
   constructor() {
     this.feedUrl = 'https://blog.wackyfunmagazine.com/feed/';
-    this.corsProxy = 'https://api.allorigins.win/get?url=';
+    this.corsProxy = 'https://corsproxy.io/?';
     this.maxPosts = 3;
   }
 
   async loadFeed() {
     try {
       // Use CORS proxy to fetch the RSS feed
-      const response = await fetch(`${this.corsProxy}${encodeURIComponent(this.feedUrl)}`);
-      const data = await response.json();
-      
-      if (data.contents) {
-        this.parseFeed(data.contents);
-      } else {
-        this.showFallbackContent();
-      }
+      const response = await fetch(`${this.corsProxy}${this.feedUrl}`);
+      const xmlString = await response.text();
+      this.parseFeed(xmlString);
     } catch (error) {
       console.warn('Unable to load RSS feed:', error);
       this.showFallbackContent();
@@ -29,19 +24,19 @@ class RSSFeedLoader {
     try {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-      
+
       // Check for parsing errors
       const parseError = xmlDoc.querySelector('parsererror');
       if (parseError) {
         throw new Error('XML parsing error');
       }
-      
+
       // Try both RSS (item) and Atom (entry) formats
       let items = xmlDoc.querySelectorAll('item');
       if (items.length === 0) {
         items = xmlDoc.querySelectorAll('entry'); // Atom feed format
       }
-      
+
       if (items.length === 0) {
         console.warn('No RSS/Atom items found');
         this.showFallbackContent();
@@ -49,41 +44,41 @@ class RSSFeedLoader {
       }
 
       const blogContainer = document.getElementById('blog-content');
-      
+
       if (!blogContainer) {
         console.warn('Blog content container not found');
         return;
       }
-      
+
       // Clear existing content
       blogContainer.innerHTML = '';
 
       // Process and display the feed items
       Array.from(items).slice(0, this.maxPosts).forEach((item, index) => {
         const title = this.getTextContent(item, 'title');
-        
+
         // For Atom feeds, links are in a different format
         let link = this.getTextContent(item, 'link');
         if (!link) {
           const linkElement = item.querySelector('link[rel="alternate"]');
           link = linkElement ? linkElement.getAttribute('href') : '';
         }
-        
+
         // Try different description fields (Atom uses summary, RSS uses description)
-        let description = this.getTextContent(item, 'description') || 
+        let description = this.getTextContent(item, 'description') ||
                          this.getTextContent(item, 'summary') ||
                          this.getTextContent(item, 'content');
-        
+
         // Clean up CDATA and HTML tags from description
         description = description.replace(/<!\[CDATA\[(.*?)\]\]>/gs, '$1')
                                 .replace(/<[^>]*>/g, '')
                                 .trim();
-        
+
         // Try different date fields
-        const pubDate = this.getTextContent(item, 'pubDate') || 
+        const pubDate = this.getTextContent(item, 'pubDate') ||
                        this.getTextContent(item, 'published') ||
                        this.getTextContent(item, 'updated');
-        
+
         const blogItemElement = this.createBlogItem(title, link, description, pubDate, index === 0);
         blogContainer.appendChild(blogItemElement);
       });
@@ -110,13 +105,13 @@ class RSSFeedLoader {
   createBlogItem(title, link, description, pubDate, isNew = false) {
     const blogItem = document.createElement('div');
     blogItem.className = 'blog-item';
-    
+
     // Format the date
     const formattedDate = this.formatDate(pubDate);
-    
+
     // Truncate description if too long
-    const truncatedDescription = description.length > 120 
-      ? description.substring(0, 120) + '...' 
+    const truncatedDescription = description.length > 120
+      ? description.substring(0, 120) + '...'
       : description;
 
     blogItem.innerHTML = `
@@ -158,7 +153,7 @@ class RSSFeedLoader {
   showFallbackContent() {
     // Keep the existing placeholder content if RSS fails to load
     console.info('Using fallback blog content - RSS feed unavailable');
-    
+
     // Optionally add a subtle indicator that this is fallback content
     const blogContainer = document.getElementById('blog-content');
     if (blogContainer) {
@@ -166,11 +161,11 @@ class RSSFeedLoader {
       const fallbackNote = document.createElement('div');
       fallbackNote.style.cssText = 'font-size: 0.75rem; color: var(--text-light); text-align: center; margin-top: 1rem; opacity: 0.7;';
       fallbackNote.innerHTML = '📡 Live blog updates temporarily unavailable';
-      
+
       // Insert before the "View All Posts" button if it exists
       const viewAllBtn = blogContainer.querySelector('.btn');
       if (viewAllBtn && viewAllBtn.parentNode) {
-        viewAllBtn.parentNode.insertBefore(fallbackNote, viewAllBtn.parentNode);
+        viewAllBtn.parentNode.insertBefore(fallbackNote, viewAllBtn);
       } else {
         blogContainer.appendChild(fallbackNote);
       }
